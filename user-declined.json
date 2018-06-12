@@ -1,0 +1,18 @@
+{
+    "@type": "MessageCard",
+    "@context": "http://schema.org/extensions",
+    "themeColor": "0076D7",
+    "summary": "${PULL_REQUEST_USER_DISPLAY_NAME} ${PULL_REQUEST_ACTION} '${PULL_REQUEST_TITLE}'",
+    "sections": [{
+        "activityTitle": "${PULL_REQUEST_USER_DISPLAY_NAME} ${PULL_REQUEST_ACTION} ${PULL_REQUEST_TITLE}",
+        "activityImage": "{your_image_url_here}",
+        "markdown": false
+    }],
+    "potentialAction": [{
+        "@type": "OpenUri",
+        "name": "View Request",
+        "targets": [
+            { "os": "default", "uri": "${PULL_REQUEST_URL}" }
+        ]
+    }]
+}

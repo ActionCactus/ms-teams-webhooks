@@ -1,0 +1,26 @@
+{
+    "@type": "MessageCard",
+    "@context": "http://schema.org/extensions",
+    "themeColor": "0076D7",
+    "summary": "${PULL_REQUEST_USER_DISPLAY_NAME} MERGED ${PULL_REQUEST_TITLE}",
+    "sections": [{
+        "activityTitle": "${PULL_REQUEST_USER_DISPLAY_NAME} MERGED ${PULL_REQUEST_TITLE}",
+        "activityImage": "{your_image_url_here}",
+        "facts": [{
+            "name": "Merge Path",
+            "value": "${PULL_REQUEST_FROM_BRANCH} -> ${PULL_REQUEST_TO_BRANCH}"
+        },{
+            "name": "Commit Hash",
+            "value": "${PULL_REQUEST_MERGE_COMMIT}"
+        }
+        ],
+        "markdown": false
+    }],
+    "potentialAction": [{
+        "@type": "OpenUri",
+        "name": "View Request",
+        "targets": [
+            { "os": "default", "uri": "${PULL_REQUEST_URL}" }
+        ]
+    }]
+}

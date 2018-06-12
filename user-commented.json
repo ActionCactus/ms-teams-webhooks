@@ -1,0 +1,25 @@
+{
+    "@type": "MessageCard",
+    "@context": "http://schema.org/extensions",
+    "themeColor": "0076D7",
+    "summary": "${PULL_REQUEST_USER_DISPLAY_NAME} commented on '${PULL_REQUEST_TITLE}'",
+    "sections": [{
+        "activityTitle": "${PULL_REQUEST_USER_DISPLAY_NAME} commented on ${PULL_REQUEST_TITLE}",
+        "activityImage": "{your_image_url_here}",
+        "facts": [{
+            "name": "Action",
+            "value": "${PULL_REQUEST_COMMENT_ACTION}"
+        }, {
+            "name": "Comment",
+            "value": "${PULL_REQUEST_COMMENT_TEXT}"},
+        ],
+        "markdown": false
+    }],
+    "potentialAction": [{
+        "@type": "OpenUri",
+        "name": "View Request",
+        "targets": [
+            { "os": "default", "uri": "${PULL_REQUEST_URL}" }
+        ]
+    }]
+}

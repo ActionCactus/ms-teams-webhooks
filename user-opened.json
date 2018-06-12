@@ -1,0 +1,26 @@
+{
+    "@type": "MessageCard",
+    "@context": "http://schema.org/extensions",
+    "themeColor": "0076D7",
+    "summary": "${PULL_REQUEST_USER_DISPLAY_NAME} opened ${PULL_REQUEST_TITLE}",
+    "sections": [{
+        "activityTitle": "${PULL_REQUEST_USER_DISPLAY_NAME} opened ${PULL_REQUEST_TITLE}",
+        "activityImage": "{your_image_url_here}",
+        "facts": [{
+            "name": "Reviewers",
+            "value": "${PULL_REQUEST_REVIEWERS}"
+        },{
+            "name": "Merge Path",
+            "value": "${PULL_REQUEST_FROM_BRANCH} -> ${PULL_REQUEST_TO_BRANCH}"
+        }
+        ],
+        "markdown": false
+    }],
+    "potentialAction": [{
+        "@type": "OpenUri",
+        "name": "View Request",
+        "targets": [
+            { "os": "default", "uri": "${PULL_REQUEST_URL}" }
+        ]
+    }]
+}

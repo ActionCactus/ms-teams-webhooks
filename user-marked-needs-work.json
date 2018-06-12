@@ -1,0 +1,28 @@
+{
+    "@type": "MessageCard",
+    "@context": "http://schema.org/extensions",
+    "themeColor": "0076D7",
+    "summary": "${PULL_REQUEST_USER_DISPLAY_NAME} thinks '${PULL_REQUEST_TITLE}' needs work",
+    "sections": [{
+        "activityTitle": "${PULL_REQUEST_USER_DISPLAY_NAME} thinks '${PULL_REQUEST_TITLE}' needs work",
+        "activityImage": "{your_image_url_here}",
+        "facts": [{
+            "name": "Approved",
+            "value": "${PULL_REQUEST_REVIEWERS_APPROVED_COUNT}"
+        },{
+            "name": "Needs Work",
+            "value": "${PULL_REQUEST_REVIEWERS_NEEDS_WORK_COUNT}"
+        },{
+            "name": "Pending",
+            "value": "${PULL_REQUEST_REVIEWERS_UNAPPROVED_COUNT}"
+        }],
+        "markdown": false
+    }],
+    "potentialAction": [{
+        "@type": "OpenUri",
+        "name": "View Request",
+        "targets": [
+            { "os": "default", "uri": "${PULL_REQUEST_URL}" }
+        ]
+    }]
+}
